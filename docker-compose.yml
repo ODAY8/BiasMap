@@ -1,1 +1,18 @@
-// docker-compose.yml
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    environment:
+      NODE_ENV: production
+      PORT: 3000
+      DB_PATH: /app/data/biasmap.sqlite
+      SEED_DATABASE: "true"
+    ports:
+      - "3000:3000"
+    volumes:
+      - biasmap-data:/app/data
+    restart: unless-stopped
+
+volumes:
+  biasmap-data:
