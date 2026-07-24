@@ -1,5 +1,4 @@
 const gamificationService = require('../services/ai/gamificationService');
-const { ANON_USER_ID } = require('../config/constants');
 
 const todayChallenge = async (req, res, next) => {
   try { res.json(await gamificationService.getTodayChallenge()); } catch (err) { next(err); }
@@ -7,7 +6,7 @@ const todayChallenge = async (req, res, next) => {
 
 const submitChallenge = async (req, res, next) => {
   try {
-    const result = await gamificationService.submitChallenge(ANON_USER_ID, req.params.id, req.body.answer);
+    const result = await gamificationService.submitChallenge(req.user.id, req.params.id, req.body.answer);
     res.json(result);
   } catch (err) { next(err); }
 };

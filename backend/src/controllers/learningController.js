@@ -1,5 +1,4 @@
 const learningService = require('../services/learning/learningService');
-const { ANON_USER_ID } = require('../config/constants');
 
 const getTopics = async (req, res, next) => {
   try { res.json(await learningService.getTopics()); } catch (err) { next(err); }
@@ -15,7 +14,9 @@ const getQuiz = async (req, res, next) => {
 
 const submitQuiz = async (req, res, next) => {
   try {
-    const result = await learningService.submitQuiz(ANON_USER_ID, req.params.quizId, req.body.answers);
+    // Learning routes are public — use req.user if available, else null (no progress tracking)
+    const userId = req.user?.id || null;
+    const result = await learningService.submitQuiz(userId, req.params.quizId, req.body.answers);
     res.json(result);
   } catch (err) { next(err); }
 };

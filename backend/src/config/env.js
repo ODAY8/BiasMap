@@ -1,6 +1,6 @@
 require('dotenv').config();
 
-const required = ['DATABASE_URL', 'GROQ_API_KEY', 'GROQ_MODEL'];
+const required = ['DATABASE_URL', 'GROQ_API_KEY', 'GROQ_MODEL', 'JWT_SECRET', 'JWT_REFRESH_SECRET'];
 
 for (const key of required) {
   if (!process.env[key]) throw new Error(`Missing required env var: ${key}`);
@@ -15,4 +15,10 @@ module.exports = {
     model: process.env.GROQ_MODEL,
   },
   frontendUrl: process.env.FRONTEND_URL || 'http://localhost:5173',
+  jwt: {
+    secret: process.env.JWT_SECRET,
+    refreshSecret: process.env.JWT_REFRESH_SECRET,
+    expiresIn: process.env.JWT_EXPIRES_IN || '15m',
+    refreshExpiresIn: process.env.JWT_REFRESH_EXPIRES_IN || '7d',
+  },
 };
