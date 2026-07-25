@@ -1,0 +1,14 @@
+{
+  "registered": {
+    "id": "u_01",
+    "name": "Alex Rivera",
+    "email": "alex@example.com",
+    "avatar": null,
+    "level": 8,
+    "xp": 1840,
+    "nextLevelXp": 2000,
+    "streak": 12,
+    "joinedAt": "2023-10-01"
+  },
+  "guest": null
+}

@@ -1,0 +1,74 @@
+[
+  {
+    "id": "emotion-language",
+    "title": "Emotion & Language",
+    "description": "Learn how emotional language shapes perception and influences how we interpret news and information.",
+    "difficulty": "Beginner",
+    "duration": 12,
+    "completed": true,
+    "xp": 150
+  },
+  {
+    "id": "framing-bias",
+    "title": "Framing Bias",
+    "description": "Discover how the same facts can be presented in ways that lead to very different conclusions.",
+    "difficulty": "Beginner",
+    "duration": 15,
+    "completed": true,
+    "xp": 150
+  },
+  {
+    "id": "source-credibility",
+    "title": "Source Credibility",
+    "description": "Develop skills to evaluate the reliability and credibility of sources cited in news articles.",
+    "difficulty": "Intermediate",
+    "duration": 18,
+    "completed": false,
+    "xp": 200
+  },
+  {
+    "id": "loaded-language",
+    "title": "Loaded Language",
+    "description": "Identify words and phrases that carry implicit bias and emotional weight beyond their literal meaning.",
+    "difficulty": "Intermediate",
+    "duration": 14,
+    "completed": false,
+    "xp": 200
+  },
+  {
+    "id": "false-balance",
+    "title": "False Balance",
+    "description": "Understand how presenting 'both sides' can sometimes create misleading equivalence between unequal positions.",
+    "difficulty": "Intermediate",
+    "duration": 16,
+    "completed": false,
+    "xp": 200
+  },
+  {
+    "id": "confirmation-bias",
+    "title": "Confirmation Bias",
+    "description": "Explore how our existing beliefs shape what information we seek out and how we interpret it.",
+    "difficulty": "Advanced",
+    "duration": 22,
+    "completed": false,
+    "xp": 300
+  },
+  {
+    "id": "agenda-setting",
+    "title": "Agenda Setting",
+    "description": "Examine how media outlets decide what stories to cover and how that shapes public discourse.",
+    "difficulty": "Advanced",
+    "duration": 20,
+    "completed": false,
+    "xp": 300
+  },
+  {
+    "id": "statistical-manipulation",
+    "title": "Statistical Manipulation",
+    "description": "Learn to spot misleading use of statistics, charts, and data in news reporting.",
+    "difficulty": "Advanced",
+    "duration": 25,
+    "completed": false,
+    "xp": 350
+  }
+]

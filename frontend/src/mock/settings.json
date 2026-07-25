@@ -1,0 +1,20 @@
+{
+  "theme": "dark",
+  "language": "en",
+  "animations": true,
+  "fontScale": "normal",
+  "notifications": {
+    "dailyChallenge": true,
+    "weeklyReport": true,
+    "newLessons": false
+  },
+  "analysisDefaults": {
+    "contentType": "news",
+    "analysisDepth": "detailed",
+    "autoHighlight": true
+  },
+  "privacy": {
+    "saveHistory": true,
+    "shareAnonymousData": false
+  }
+}

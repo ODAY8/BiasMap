@@ -1,0 +1,32 @@
+{
+  "comparison": [
+    {
+      "title": "Article A — The Guardian",
+      "framing": "Progressive / Reform-oriented",
+      "tone": "Urgent, Concerned",
+      "emotion": {
+        "hope": 20,
+        "fear": 35,
+        "anger": 25,
+        "urgency": 15,
+        "neutral": 5
+      },
+      "stakeholders": ["Environmental activists", "Scientists", "Youth groups"],
+      "summary": "Frames climate change as an existential crisis requiring immediate systemic change. Emphasizes scientific consensus and grassroots activism. Uses emotionally charged language to convey urgency."
+    },
+    {
+      "title": "Article B — Wall Street Journal",
+      "framing": "Economic / Market-oriented",
+      "tone": "Cautious, Analytical",
+      "emotion": {
+        "hope": 30,
+        "fear": 10,
+        "anger": 5,
+        "urgency": 15,
+        "neutral": 40
+      },
+      "stakeholders": ["Business leaders", "Economists", "Policy makers"],
+      "summary": "Frames climate policy through an economic lens, emphasizing market solutions, innovation, and cost-benefit analysis. Skeptical of rapid regulatory changes. Prioritizes economic stability."
+    }
+  ]
+}

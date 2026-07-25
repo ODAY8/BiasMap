@@ -1,0 +1,56 @@
+{
+  "id": "challenge-2024-01-15",
+  "title": "Spot the Spin",
+  "description": "Read the following news excerpt and identify the bias techniques being used. Each question tests a different critical thinking skill.",
+  "article": "The radical new tax proposal, championed by out-of-touch politicians, would devastate hardworking families while lining the pockets of government bureaucrats. Some economists — mostly those with ties to left-wing think tanks — claim it could reduce inequality, but real experts warn of catastrophic consequences for job creators.",
+  "questions": [
+    {
+      "id": "q1",
+      "text": "Which phrase in the excerpt uses loaded language to frame politicians negatively?",
+      "options": [
+        "new tax proposal",
+        "out-of-touch politicians",
+        "reduce inequality",
+        "some economists"
+      ],
+      "correct": 1,
+      "explanation": "'Out-of-touch' is a loaded phrase that implies politicians are disconnected from ordinary people, framing them negatively without evidence."
+    },
+    {
+      "id": "q2",
+      "text": "What bias technique is used when the article says 'mostly those with ties to left-wing think tanks'?",
+      "options": [
+        "False balance",
+        "Vague attribution",
+        "Ad hominem / source discrediting",
+        "Cherry picking"
+      ],
+      "correct": 2,
+      "explanation": "This discredits the economists by implying political bias rather than engaging with their actual arguments — a classic ad hominem technique."
+    },
+    {
+      "id": "q3",
+      "text": "The phrase 'real experts warn of catastrophic consequences' is an example of:",
+      "options": [
+        "Objective reporting",
+        "Vague attribution with loaded language",
+        "Statistical manipulation",
+        "False balance"
+      ],
+      "correct": 1,
+      "explanation": "'Real experts' implies other experts are fake, while 'catastrophic' is emotionally loaded. No specific experts or evidence are cited."
+    },
+    {
+      "id": "q4",
+      "text": "Which perspective is completely absent from this excerpt?",
+      "options": [
+        "Politicians",
+        "Economists",
+        "Ordinary families who might benefit",
+        "Job creators"
+      ],
+      "correct": 2,
+      "explanation": "While the article claims to speak for 'hardworking families,' it never actually quotes or represents people who might benefit from reduced inequality."
+    }
+  ]
+}

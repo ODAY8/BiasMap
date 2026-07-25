@@ -1,0 +1,62 @@
+{
+  "summary": "This article covers the government's new climate policy announcement, focusing on renewable energy targets and economic implications. The framing leans toward optimism about technological solutions while downplaying structural economic challenges faced by fossil fuel workers.",
+  "readingLevel": "Intermediate",
+  "framingStyle": "Narrative Driven",
+  "emotion": {
+    "hope": 35,
+    "fear": 20,
+    "anger": 10,
+    "urgency": 25,
+    "neutral": 10
+  },
+  "highlights": [
+    {
+      "sentence": "The government's bold new plan will revolutionize our energy future.",
+      "type": "Loaded Language",
+      "explanation": "Words like 'bold' and 'revolutionize' carry strong positive connotations that frame the policy favorably before evidence is presented.",
+      "impact": "Primes the reader to view the policy positively before examining its merits.",
+      "lessonId": "loaded-language"
+    },
+    {
+      "sentence": "Critics, who have long opposed progress, raised concerns about job losses.",
+      "type": "Framing Bias",
+      "explanation": "Labeling critics as opponents of 'progress' delegitimizes their concerns without addressing the substance of their arguments.",
+      "impact": "Discourages readers from taking opposing viewpoints seriously.",
+      "lessonId": "framing-bias"
+    },
+    {
+      "sentence": "Experts say the transition could create millions of jobs.",
+      "type": "Vague Attribution",
+      "explanation": "'Experts say' without naming specific experts or studies makes the claim unverifiable.",
+      "impact": "Creates an impression of authority without accountability.",
+      "lessonId": "source-credibility"
+    },
+    {
+      "sentence": "Communities will inevitably suffer during the transition period.",
+      "type": "Emotion",
+      "explanation": "The word 'inevitably' introduces fatalism and emotional weight, suggesting harm is certain and unavoidable.",
+      "impact": "Generates fear and resignation rather than encouraging problem-solving.",
+      "lessonId": "emotion-language"
+    }
+  ],
+  "perspectives": ["Government", "Industry Experts", "Environmental Groups"],
+  "missingPerspectives": ["Fossil Fuel Workers", "Rural Communities", "Independent Scientists", "NGOs"],
+  "sourceIndicators": {
+    "authorNamed": true,
+    "referencesPresent": true,
+    "publicationDate": true,
+    "primarySources": false,
+    "anonymousQuotes": true
+  },
+  "reflectionQuestions": [
+    "What economic interests might influence how this story is framed?",
+    "Whose voices are absent from this article, and why might that matter?",
+    "How would this story read differently if written from a fossil fuel worker's perspective?",
+    "What evidence would you need to evaluate the job creation claims independently?"
+  ],
+  "headlineAlternatives": [
+    "Government Announces Climate Policy: Supporters Cite Opportunity, Critics Warn of Worker Impact",
+    "New Energy Plan Targets 2035 Renewables Goal Amid Economic Transition Debate",
+    "Climate Policy Divides Economists: Jobs Gained vs. Jobs Lost in Energy Shift"
+  ]
+}

@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1,
+    "title": "Government Announces New Climate Policy",
+    "date": "2024-01-15",
+    "preview": "The government's bold new plan will revolutionize our energy future with renewable targets...",
+    "contentType": "News",
+    "biasScore": 72,
+    "emotionDominant": "hope"
+  },
+  {
+    "id": 2,
+    "title": "Tech Giants Face Antitrust Scrutiny",
+    "date": "2024-01-14",
+    "preview": "Regulators are closing in on Silicon Valley's most powerful companies in what analysts call...",
+    "contentType": "News",
+    "biasScore": 58,
+    "emotionDominant": "urgency"
+  },
+  {
+    "id": 3,
+    "title": "Opinion: The Future of Remote Work",
+    "date": "2024-01-13",
+    "preview": "As companies mandate returns to office, workers are pushing back against what many see as...",
+    "contentType": "Opinion",
+    "biasScore": 85,
+    "emotionDominant": "anger"
+  },
+  {
+    "id": 4,
+    "title": "New Study Links Social Media to Teen Anxiety",
+    "date": "2024-01-12",
+    "preview": "Researchers at Stanford University published findings suggesting a correlation between...",
+    "contentType": "Science",
+    "biasScore": 41,
+    "emotionDominant": "fear"
+  },
+  {
+    "id": 5,
+    "title": "Central Bank Raises Interest Rates Again",
+    "date": "2024-01-11",
+    "preview": "In a move that surprised markets, the central bank announced a quarter-point rate increase...",
+    "contentType": "Finance",
+    "biasScore": 33,
+    "emotionDominant": "neutral"
+  }
+]

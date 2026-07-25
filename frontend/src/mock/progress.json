@@ -1,0 +1,31 @@
+{
+  "articlesAnalyzed": 52,
+  "lessonsCompleted": 18,
+  "streak": 12,
+  "xp": 1840,
+  "level": 8,
+  "nextLevelXp": 2000,
+  "badges": [
+    { "id": "first-analysis", "name": "First Look", "description": "Completed your first analysis", "icon": "search", "earnedAt": "2023-11-01" },
+    { "id": "streak-7", "name": "Week Warrior", "description": "Maintained a 7-day streak", "icon": "flame", "earnedAt": "2023-11-15" },
+    { "id": "critical-thinker", "name": "Critical Thinker", "description": "Scored 90%+ on a challenge", "icon": "brain", "earnedAt": "2023-12-03" },
+    { "id": "bias-hunter", "name": "Bias Hunter", "description": "Identified 50 bias instances", "icon": "crosshair", "earnedAt": "2023-12-20" },
+    { "id": "scholar", "name": "Scholar", "description": "Completed 10 learning modules", "icon": "book-open", "earnedAt": "2024-01-05" }
+  ],
+  "weeklyActivity": [
+    { "day": "Mon", "analyses": 3, "lessons": 1 },
+    { "day": "Tue", "analyses": 5, "lessons": 2 },
+    { "day": "Wed", "analyses": 2, "lessons": 0 },
+    { "day": "Thu", "analyses": 7, "lessons": 3 },
+    { "day": "Fri", "analyses": 4, "lessons": 1 },
+    { "day": "Sat", "analyses": 6, "lessons": 2 },
+    { "day": "Sun", "analyses": 3, "lessons": 1 }
+  ],
+  "skillProgress": [
+    { "skill": "Emotion Detection", "level": 85 },
+    { "skill": "Source Evaluation", "level": 70 },
+    { "skill": "Framing Analysis", "level": 60 },
+    { "skill": "Logical Fallacies", "level": 45 },
+    { "skill": "Statistical Literacy", "level": 30 }
+  ]
+}
