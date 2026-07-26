@@ -11,13 +11,15 @@ const app = express();
 app.use(helmet());
 app.use(cors({ origin: frontendUrl === '*' ? true : frontendUrl, credentials: true }));
 app.use(express.json({ limit: '1mb' }));
-app.use(standard);
 
-// Public — no token required
+// Public — no token required (no rate limit on auth)
 app.use('/api/auth', require('./routes/authRoutes'));
 app.use('/api/propaganda-techniques', require('./routes/propagandaRoutes'));
 app.use('/api/learning', require('./routes/learningRoutes'));
 app.get('/api/challenges/leaderboard', require('./routes/challengeRoutes'));
+
+// Rate limit only protected routes
+app.use(standard);
 
 // Protected — valid JWT required (works for both registered users and guests)
 app.use('/api/analyze', authenticate, require('./routes/analyzeRoutes'));

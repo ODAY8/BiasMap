@@ -1,8 +1,12 @@
 const bcrypt = require('bcryptjs');
 const crypto = require('crypto');
+const { OAuth2Client } = require('google-auth-library');
+const { google: googleCfg, facebook: facebookCfg } = require('../../config/env');
 const userModel = require('../../models/userModel');
 const refreshTokenModel = require('../../models/refreshTokenModel');
 const { signAccess, signRefresh, verifyRefresh } = require('../../utils/jwt');
+
+const googleClient = new OAuth2Client(googleCfg.clientId);
 
 const issueTokens = async (user) => {
   const accessToken = signAccess({ id: user.id, email: user.email, name: user.name, role: user.role, is_guest: user.is_guest });
@@ -48,4 +52,42 @@ const refresh = async (token) => {
 
 const logout = (token) => refreshTokenModel.revoke(token);
 
-module.exports = { register, login, guestLogin, refresh, logout };
+// Find-or-create helper for OAuth
+const findOrCreateOAuthUser = async ({ email, name, googleId, facebookId }) => {
+  // 1. Try find by provider ID
+  let user = googleId
+    ? await userModel.findByGoogleId(googleId)
+    : await userModel.findByFacebookId(facebookId);
+
+  // 2. Try find by email and link provider
+  if (!user && email) {
+    user = await userModel.findByEmail(email);
+    if (user) await userModel.updateOAuth(user.id, { googleId, facebookId });
+  }
+
+  // 3. Create new user
+  if (!user) {
+    user = await userModel.create({ email, name, isGuest: false, googleId, facebookId });
+  }
+
+  return issueTokens(user);
+};
+
+const googleLogin = async (accessToken) => {
+  const res = await fetch(`https://www.googleapis.com/oauth2/v3/userinfo`, {
+    headers: { Authorization: `Bearer ${accessToken}` },
+  });
+  if (!res.ok) { const e = new Error('Invalid Google token'); e.status = 401; throw e; }
+  const { sub: googleId, email, name } = await res.json();
+  return findOrCreateOAuthUser({ email, name, googleId });
+};
+
+const facebookLogin = async (accessToken) => {
+  const url = `https://graph.facebook.com/me?fields=id,name,email&access_token=${accessToken}`;
+  const res = await fetch(url);
+  if (!res.ok) { const e = new Error('Invalid Facebook token'); e.status = 401; throw e; }
+  const { id: facebookId, name, email } = await res.json();
+  return findOrCreateOAuthUser({ email, name, facebookId });
+};
+
+module.exports = { register, login, guestLogin, refresh, logout, googleLogin, facebookLogin };

@@ -29,4 +29,8 @@ router.post('/logout',
 
 router.get('/me', authenticate, ctrl.me);
 
+router.post('/google', ctrl.googleAuth);
+
+router.post('/facebook', ctrl.facebookAuth);
+
 module.exports = router;

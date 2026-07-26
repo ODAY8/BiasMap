@@ -44,4 +44,23 @@ const me = async (req, res, next) => {
   } catch (err) { next(err); }
 };
 
-module.exports = { register, login, guestLogin, refreshToken, logout, me };
+const googleAuth = async (req, res, next) => {
+  try {
+    console.log('[Google Auth] body keys:', Object.keys(req.body), '| accessToken length:', req.body.accessToken?.length)
+    const token = req.body.accessToken || req.body.idToken || req.body.token
+    if (!token) { return res.status(400).json({ error: { message: 'Missing accessToken', code: 'VALIDATION_ERROR' } }) }
+    const result = await authService.googleLogin(token);
+    res.json(result);
+  } catch (err) { next(err); }
+};
+
+const facebookAuth = async (req, res, next) => {
+  try {
+    const token = req.body.accessToken || req.body.token
+    if (!token) { return res.status(400).json({ error: { message: 'Missing accessToken', code: 'VALIDATION_ERROR' } }) }
+    const result = await authService.facebookLogin(token);
+    res.json(result);
+  } catch (err) { next(err); }
+};
+
+module.exports = { register, login, guestLogin, refreshToken, logout, me, googleAuth, facebookAuth };

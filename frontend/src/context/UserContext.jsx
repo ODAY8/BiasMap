@@ -52,6 +52,18 @@ export function UserProvider({ children }) {
     return data.user
   }, [])
 
+  const googleLogin = useCallback(async (idToken) => {
+    const data = await api.post('/auth/google', { idToken })
+    _persist(data.accessToken, data.refreshToken, data.user)
+    return data.user
+  }, [])
+
+  const facebookLogin = useCallback(async (accessToken) => {
+    const data = await api.post('/auth/facebook', { accessToken })
+    _persist(data.accessToken, data.refreshToken, data.user)
+    return data.user
+  }, [])
+
   const logout = useCallback(async () => {
     const refreshToken = localStorage.getItem(REFRESH_KEY)
     if (refreshToken) {
@@ -84,7 +96,7 @@ export function UserProvider({ children }) {
   return (
     <UserContext.Provider value={{
       user, token, isGuest, ready,
-      register, login, continueAsGuest, logout,
+      register, login, continueAsGuest, googleLogin, facebookLogin, logout,
       getGuestData, saveGuestData, clearGuestData,
     }}>
       {children}
