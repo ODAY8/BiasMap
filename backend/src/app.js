@@ -1,24 +1,33 @@
 const express = require('express');
 const helmet = require('helmet');
 const cors = require('cors');
-const { standard } = require('./middleware/rateLimiter');
+const { standard, auth } = require('./middleware/rateLimiter');
 const errorHandler = require('./middleware/errorHandler');
 const { authenticate } = require('./middleware/auth');
 const { frontendUrl } = require('./config/env');
 
 const app = express();
 
+// Trust Render's reverse proxy so express-rate-limit sees the real client IP
+// Without this, all users share one IP (the proxy) and hit the limit together
+app.set('trust proxy', 1);
+
 app.use(helmet());
 app.use(cors({ origin: frontendUrl === '*' ? true : frontendUrl, credentials: true }));
 app.use(express.json({ limit: '1mb' }));
 
-// Public — no token required (no rate limit on auth)
-app.use('/api/auth', require('./routes/authRoutes'));
+// Health check — exempt from rate limiting so Render uptime checks never 429
+app.get('/health', (_req, res) => res.json({ status: 'ok' }));
+
+// Auth routes get a stricter dedicated limiter (brute-force protection)
+app.use('/api/auth', auth, require('./routes/authRoutes'));
+
+// Public routes — no auth, no rate limit
 app.use('/api/propaganda-techniques', require('./routes/propagandaRoutes'));
 app.use('/api/learning', require('./routes/learningRoutes'));
 app.get('/api/challenges/leaderboard', require('./routes/challengeRoutes'));
 
-// Rate limit only protected routes
+// Standard rate limit applied to all protected routes
 app.use(standard);
 
 // Protected — valid JWT required (works for both registered users and guests)
