@@ -24,7 +24,7 @@ import NotFoundPage     from '@/pages/NotFoundPage'
 
 function AppShell() {
   const { user, ready } = useUser()
-  const [splashDone, setSplashDone] = useState(hasSeenOnboarding)
+  const [splashDone, setSplashDone] = useState(() => hasSeenOnboarding())
 
   if (!splashDone) return <SplashScreen onDone={() => setSplashDone(true)} />
   if (ready && !user) return <AuthModal />

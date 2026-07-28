@@ -58,7 +58,6 @@ export default function SplashScreen({ onDone }) {
   // Phase sequencer
   useEffect(() => {
     if (prefersReduced) {
-      // Simplified: just show logo + CTA immediately
       setPhase('cta')
       return
     }
@@ -68,7 +67,7 @@ export default function SplashScreen({ onDone }) {
     const t3 = setTimeout(() => setPhase('cta'),      PHASE_DURATION.logo + PHASE_DURATION.merge + PHASE_DURATION.concepts)
 
     return () => { clearTimeout(t1); clearTimeout(t2); clearTimeout(t3) }
-  }, [finish, prefersReduced])
+  }, [prefersReduced])  // finish is not used inside this effect — removing it stops the timer reset loop
 
   // Stagger concept reveals
   useEffect(() => {
