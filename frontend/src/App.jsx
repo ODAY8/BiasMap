@@ -27,7 +27,8 @@ function AppShell() {
   const [splashDone, setSplashDone] = useState(() => hasSeenOnboarding())
 
   if (!splashDone) return <SplashScreen onDone={() => setSplashDone(true)} />
-  if (ready && !user) return <AuthModal />
+  if (!ready) return null
+  if (!user) return <AuthModal />
 
   return (
     <BrowserRouter>
